@@ -1,0 +1,15 @@
+IfModule mod_ssl.c>
+<VirtualHost *:443>
+    ServerName tripegate.com
+    ServerAlias www.tripegate.com
+    ProxyRequests Off
+    ProxyPreserveHost On
+    ProxyVia Full
+    <Proxy *>
+        Require all granted
+    </Proxy>
+    ProxyPass / http://127.0.0.1:3333/
+    ProxyPassReverse / http://127.0.0.1:3333/
+RewriteEngine on
+# Some rewrite rules in this file were disabled on your HTTPS site,
+# because they have the potential to create redirecti
