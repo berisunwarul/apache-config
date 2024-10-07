@@ -1,0 +1,4 @@
+prod-env
+.env
+*.env
+*/*.env

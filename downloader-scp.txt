@@ -1,0 +1,13 @@
+for file in $(ssh -i secret.pem user_name@IP_ADDRESS_OR_DOMAIN_FOR_SSH 'find /var/www -name .env'); do
+    # Get the directory name
+    dirname=$(basename $(dirname "$file"))
+    
+    # Download the .env file and rename it using the parent directory
+    scp -i secret.pem user_name@IP_ADDRESS_OR_DOMAIN_FOR_SSH:"$file" "./${dirname}_env";
+done
+
+
+
+Get File List Only:
+
+ssh -i secret.pem user_name@IP_ADDRESS_OR_DOMAIN_FOR_SSH 'find /var/www -name .env'
