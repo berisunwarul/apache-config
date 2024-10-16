@@ -1,7 +1,7 @@
 IfModule mod_ssl.c>
 <VirtualHost *:443>
-    ServerName tripegate.com
-    ServerAlias www.tripegate.com
+    ServerName xjatri.com
+    ServerAlias www.xjatri.com
     ProxyRequests Off
     ProxyPreserveHost On
     ProxyVia Full
